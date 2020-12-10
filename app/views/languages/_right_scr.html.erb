@@ -1,0 +1,41 @@
+<ul>
+  <li class="right-top">
+    <%= form_with model: @language, local: true do |f| %>
+      <%= f.text_field :gem_name %>
+      <%= f.text_field :about_gem %>
+      <%= f.text_field :syntax_name %>
+      <%= f.text_field :version %>
+      <%= f.text_field :how_to_use %>
+      <%= f.text_field :description %>
+      <%= f.text_field :reference_url %>
+      <%= f.submit '送信' %>
+      <% end %>
+  </li>
+  <li class="right-bottom">
+    <table>
+      <tr>
+        <th>gemファイル名</th>
+        <th>gemfileに記載する内容</th>
+        <th>メソッド名</th>
+        <th>version</th>
+        <th>使い方</th>
+        <th>記載場所</th>
+        <th>参考URL</th>
+
+
+      <% @languages.each do |language| %>
+        <tr>
+          <th><%= language.gem_name %></th>
+          <th><%= language.about_gem %></th>
+          <th><%= language.syntax_name %></th>
+          <th><%= language.version %></th>
+          <th><%= language.how_to_use %></th>
+          <th><%= language.description %></th>
+          <th><%= language.reference_url %></th>
+        </tr>
+      <% end %>
+      </tr>
+
+    </table>
+  </li>
+</ul>

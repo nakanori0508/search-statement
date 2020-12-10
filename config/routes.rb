@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root to: "rooms#index"
+  root to: "languages#index"
+  resources :languages
 end
